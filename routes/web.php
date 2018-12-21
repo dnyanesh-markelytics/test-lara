@@ -16,5 +16,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// Employee::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' =>'auth'], function(){
+  //Change Password Routes
+	Route::resource('employees','Employee\EmployeeController');
+});
