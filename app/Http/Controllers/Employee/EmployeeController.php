@@ -18,8 +18,8 @@ class EmployeeController extends Controller
        $query = Employee::query();
        $employees = $query->paginate(2);
        // dd( $employees );
-       return response()
-            ->view('employee/employee', $employees);
+       // return view("employee/employee", ["employees"=>$employees]);
+       // return view('employee.employees.index', $employees);
 
     }
 

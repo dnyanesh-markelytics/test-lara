@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                      <!-- action="{{ route('employees') }}"  action needs to be added --> 
-                    <form method="POST" aria-label="{{ __('Login') }}">
+                    <form action="{{ route('employees') }}" method="POST" aria-label="{{ __('Login') }}">
                         @csrf
 
                         <div class="form-group row">

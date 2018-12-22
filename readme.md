@@ -63,3 +63,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+php artisan make:migration create_links_table --create=links
+php artisan migrate
+php artisan make:model --factory Link
+php artisan make:seeder LinksTableSeeder
+https://laravel-news.com/your-first-laravel-application
