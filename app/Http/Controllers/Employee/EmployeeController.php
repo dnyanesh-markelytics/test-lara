@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Employee;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
+use App\Models\Company;
+use View;
 
 class EmployeeController extends Controller
 {
@@ -16,9 +18,9 @@ class EmployeeController extends Controller
     public function index()
     {
        $query = Employee::query();
-       $employees = $query->paginate(2);
-       // dd( $employees );
-       // return view("employee/employee", ["employees"=>$employees]);
+       $employees = $query->paginate(2);       
+       return view('employee.index', ['employees' => $employees]);
+       // return View::make("employee.employee")->with("employees",$employees);
        // return view('employee.employees.index', $employees);
 
     }
@@ -30,7 +32,9 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        
+        $companies = Company::pluck('name', 'id');
+        return view('employee.create', ['companies' => $companies]);
     }
 
     /**

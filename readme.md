@@ -70,3 +70,4 @@ php artisan migrate
 php artisan make:model --factory Link
 php artisan make:seeder LinksTableSeeder
 https://laravel-news.com/your-first-laravel-application
+php artisan make:test SubmitLinksTest
